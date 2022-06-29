@@ -1,0 +1,43 @@
+
+<div class="mt-4 pt-2">
+<h4 class="text-center">Cadastre-se</h4>
+
+<form class="form mt-4" [formGroup]="novoUsuarioForm" (submit)="cadastrar()">
+    <div class="form-group">
+        <input 
+            class="form-control" 
+            type="text" 
+            formControlName="username" 
+            placeholder="Username do usuário"/>
+    </div>
+    <br />
+    <div class="form-group">
+        <input 
+            class="form-control" 
+            type="email" 
+            formControlName="email" 
+            placeholder="E-mail"/>
+    </div>
+    <br />
+    <div class="form-group">
+        <input 
+            class="form-control" 
+            type="password" 
+            formControlName="password" 
+            placeholder="Password"/>
+    </div>
+    <br />
+    <div class="form-group">
+        <input 
+            class="form-control" 
+            type="password" 
+            formControlName="repassword" 
+            placeholder="Password confirmação"/>
+    </div>
+    <br />
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary form-control">Cadastrar</button>
+    </div>
+</form>
+<p>Já possue cadastro? <a [routerLink]="['']">Faça o login</a></p>
+</div>
