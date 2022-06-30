@@ -9,6 +9,15 @@
             type="text" 
             formControlName="username" 
             placeholder="Username do usuário"/>
+            <app-mensagem
+                *ngIf="novoUsuarioForm.get('username')?.errors?.['required'] &&
+                        novoUsuarioForm.get('username')?.touched"
+                mensagem="Username é obrigatório.">
+            </app-mensagem>
+            <app-mensagem
+                *ngIf="novoUsuarioForm.get('username')?.errors?.['minusculo']"
+                mensagem="username apenas letras minúsculas.">
+            </app-mensagem>
     </div>
     <br />
     <div class="form-group">
@@ -17,6 +26,15 @@
             type="email" 
             formControlName="email" 
             placeholder="E-mail"/>
+            <app-mensagem 
+                *ngIf="novoUsuarioForm.get('email')?.errors?.['required'] &&
+                novoUsuarioForm.get('email')?.touched"
+                mensagem="E-mail obrigatório.">
+            </app-mensagem>
+            <app-mensagem 
+                *ngIf="novoUsuarioForm.get('email')?.errors?.['email']"
+                mensagem="Formato de e-mail inválido.">
+            </app-mensagem>
     </div>
     <br />
     <div class="form-group">
@@ -25,6 +43,11 @@
             type="password" 
             formControlName="password" 
             placeholder="Password"/>
+            <app-mensagem 
+                *ngIf="novoUsuarioForm.get('password')?.errors?.['required'] &&
+                novoUsuarioForm.get('username')?.touched"
+                mensagem="Password obrigatório">
+            </app-mensagem>
     </div>
     <br />
     <div class="form-group">
@@ -33,6 +56,11 @@
             type="password" 
             formControlName="repassword" 
             placeholder="Password confirmação"/>
+            <app-mensagem 
+                *ngIf="novoUsuarioForm.get('repassword')?.errors?.['required'] &&
+                novoUsuarioForm.get('username')?.touched"
+                mensagem="Password confirmação é obrigatório">
+            </app-mensagem>
     </div>
     <br />
     <div class="form-group">
