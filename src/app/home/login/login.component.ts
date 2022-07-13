@@ -24,10 +24,10 @@ export class LoginComponent implements OnInit {
       data =>{
         this.router.navigate(['estado'])
 
-      console.log(data.message);
+      console.log(data);
     }, 
-    e =>{
-      alert(e.error.message)
+    error =>{
+      console.log(error);
     });
   }
 
